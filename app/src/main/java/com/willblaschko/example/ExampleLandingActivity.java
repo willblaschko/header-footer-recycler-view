@@ -19,6 +19,9 @@ public class ExampleLandingActivity extends Activity{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         mContext = this;
+
+        setTitle("Header Foot Adapter Example");
+
         setContentView(R.layout.activity_landing);
 
         findViewById(R.id.ll_h).setOnClickListener(new View.OnClickListener() {

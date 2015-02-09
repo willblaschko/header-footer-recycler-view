@@ -33,7 +33,7 @@ public class ExampleHorizontalLinearLayoutActivity extends Activity {
         setContentView(R.layout.activity_example);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-
+        setTitle("Horizontal Linear Layout");
     }
 
     private void init(){

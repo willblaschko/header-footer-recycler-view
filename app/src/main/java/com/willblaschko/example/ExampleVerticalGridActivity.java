@@ -33,7 +33,7 @@ public class ExampleVerticalGridActivity extends Activity {
         mContext = this;
         setContentView(R.layout.activity_example);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
+        setTitle("Vertical Grid");
     }
 
     private void init(){

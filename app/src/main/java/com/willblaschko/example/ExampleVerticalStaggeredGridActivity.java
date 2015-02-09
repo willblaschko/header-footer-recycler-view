@@ -33,7 +33,7 @@ public class ExampleVerticalStaggeredGridActivity extends Activity {
         setContentView(R.layout.activity_example);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-
+        setTitle("Vertical Staggered Grid");
     }
 
     private void init(){
