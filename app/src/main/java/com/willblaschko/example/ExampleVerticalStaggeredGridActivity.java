@@ -32,11 +32,12 @@ public class ExampleVerticalStaggeredGridActivity extends Activity {
         mContext = this;
         setContentView(R.layout.activity_example);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        init();
+
 
     }
 
     private void init(){
+        mStrings.clear();
         int count = new Random().nextInt(100)+5;
         for(int i = 0; i < count; i++){
             mStrings.add(Integer.toString(i));
@@ -60,6 +61,7 @@ public class ExampleVerticalStaggeredGridActivity extends Activity {
 
     public void onResume(){
         super.onResume();
+        init();
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }

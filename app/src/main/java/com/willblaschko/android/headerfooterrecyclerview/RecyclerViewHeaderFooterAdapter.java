@@ -120,9 +120,14 @@ public class RecyclerViewHeaderFooterAdapter extends RecyclerView.Adapter {
             vh.itemView.setLayoutParams(layoutParams);
         }
 
+        //if the view already belongs to another layout, remove it
+        if(view.getParent() != null){
+            ((ViewGroup)view.getParent()).removeView(view);
+        }
+
         //empty out our FrameLayout and replace with our header/footer
-        ((FrameLayout)vh.itemView).removeAllViews();
-        ((FrameLayout)vh.itemView).addView(view);
+        vh.base.removeAllViews();
+        vh.base.addView(view);
 
     }
 
@@ -193,8 +198,10 @@ public class RecyclerViewHeaderFooterAdapter extends RecyclerView.Adapter {
 
     //our header/footer RecyclerView.ViewHolder is just a FrameLayout
     public static class HeaderFooterViewHolder extends RecyclerView.ViewHolder{
+        FrameLayout base;
         public HeaderFooterViewHolder(View itemView) {
             super(itemView);
+            base = (FrameLayout) itemView;
         }
     }
 }

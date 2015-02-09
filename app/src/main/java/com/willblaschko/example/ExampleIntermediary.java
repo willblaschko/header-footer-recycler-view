@@ -3,8 +3,10 @@ package com.willblaschko.example;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.willblaschko.android.headerfooterrecyclerview.R;
 import com.willblaschko.android.headerfooterrecyclerview.RecyclerViewIntermediary;
 
@@ -59,13 +61,16 @@ public class ExampleIntermediary implements RecyclerViewIntermediary {
     @Override
     public void populateViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         ((TestViewHolder) viewHolder).mTextView.setText(mItems.get(position));
+        Glide.with(((TestViewHolder) viewHolder).mImageView.getContext()).load("http://lorempixel.com/400/400/?id="+mItems.get(position)).centerCrop().into(((TestViewHolder) viewHolder).mImageView);
     }
 
     private class TestViewHolder extends RecyclerView.ViewHolder{
         TextView mTextView;
+        ImageView mImageView;
         public TestViewHolder(View itemView) {
             super(itemView);
             this.mTextView = (TextView) itemView.findViewById(R.id.text);
+            this.mImageView = (ImageView) itemView.findViewById(R.id.image);
         }
     }
 
