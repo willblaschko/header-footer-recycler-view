@@ -38,7 +38,7 @@ public class ExampleVerticalGridActivity extends Activity {
     }
 
     private void init(){
-        int count = new Random().nextInt(10)+10;
+        int count = new Random().nextInt(10)+5;
         for(int i = 0; i < count; i++){
             mStrings.add(Integer.toString(i));
         }

@@ -37,7 +37,7 @@ public class ExampleHorizontalStaggeredGridActivity extends Activity {
     }
 
     private void init(){
-        int count = new Random().nextInt(10)+10;
+        int count = new Random().nextInt(10)+5;
         for(int i = 0; i < count; i++){
             mStrings.add(Integer.toString(i));
         }
@@ -49,7 +49,9 @@ public class ExampleHorizontalStaggeredGridActivity extends Activity {
 
         mAdapter.addHeader(ExampleHeaderFooter.getView(mContext, "Header"));
 
+
         mAdapter.addFooter(ExampleHeaderFooter.getView(mContext, "Footer"));
+
 
     }
 

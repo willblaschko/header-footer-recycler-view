@@ -37,7 +37,7 @@ public class ExampleVerticalStaggeredGridActivity extends Activity {
     }
 
     private void init(){
-        int count = new Random().nextInt(10)+10;
+        int count = new Random().nextInt(100)+5;
         for(int i = 0; i < count; i++){
             mStrings.add(Integer.toString(i));
         }
@@ -47,9 +47,14 @@ public class ExampleVerticalStaggeredGridActivity extends Activity {
 
         mAdapter = new RecyclerViewHeaderFooterAdapter(mLayoutManager, mIntermediary);
 
+
         mAdapter.addHeader(ExampleHeaderFooter.getView(mContext, "Header"));
 
+        mAdapter.addHeader(ExampleHeaderFooter.getView(mContext, "Header 2"));
+
         mAdapter.addFooter(ExampleHeaderFooter.getView(mContext, "Footer"));
+
+        mAdapter.addFooter(ExampleHeaderFooter.getView(mContext, "Footer 2"));
 
     }
 

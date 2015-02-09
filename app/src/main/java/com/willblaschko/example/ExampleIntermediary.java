@@ -33,13 +33,27 @@ public class ExampleIntermediary implements RecyclerViewIntermediary {
 
     @Override
     public RecyclerView.ViewHolder getViewHolder(ViewGroup viewGroup, int type) {
-        View v = View.inflate(viewGroup.getContext(), R.layout.item_string, null);
+        View v;
+        switch (type){
+            case 1:
+                v = View.inflate(viewGroup.getContext(), R.layout.item_string_1, null);
+                break;
+            case 2:
+                v = View.inflate(viewGroup.getContext(), R.layout.item_string_2, null);
+                break;
+            case 3:
+                v = View.inflate(viewGroup.getContext(), R.layout.item_string_3, null);
+                break;
+            default:
+                v = View.inflate(viewGroup.getContext(), R.layout.item_string_4, null);
+                break;
+        }
         return new TestViewHolder(v);
     }
 
     @Override
     public int getItemViewType(int position) {
-        return 0;
+        return position % 4;
     }
 
     @Override
