@@ -18,7 +18,7 @@
     <TextView
 
         android:layout_width="250dp"
-        android:layout_height="150dp"
+        android:layout_height="129dp"
         android:padding="32dp"
         android:gravity="center"
         android:id="@+id/text"/>

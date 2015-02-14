@@ -10,13 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/image"
+        android:background="#ffaa66cc"
         android:layout_alignTop="@+id/text"
         android:layout_alignBottom="@+id/text"
         android:layout_alignLeft="@+id/text"
         android:layout_alignRight="@+id/text"/>
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="111dp"
+        android:layout_height="111dp"
 
         android:padding="32dp"
         android:gravity="center"
