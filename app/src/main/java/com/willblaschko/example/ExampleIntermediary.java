@@ -54,13 +54,12 @@ public class ExampleIntermediary implements IRecyclerViewIntermediary {
 
     @Override
     public int getItemViewType(int position) {
-        return position % 4;
+        return position % 4;  //any logic can go here
     }
 
     @Override
     public void populateViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         ((TestViewHolder) viewHolder).mTextView.setText(mItems.get(position));
-//        Glide.with(((TestViewHolder) viewHolder).mImageView.getContext()).load("http://lorempixel.com/400/400/?id="+mItems.get(position)).centerCrop().into(((TestViewHolder) viewHolder).mImageView);
     }
 
     private class TestViewHolder extends RecyclerView.ViewHolder{
