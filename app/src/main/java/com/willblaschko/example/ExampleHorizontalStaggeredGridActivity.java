@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
+import com.willblaschko.android.headerfooterrecyclerview.IRecyclerViewIntermediary;
 import com.willblaschko.android.headerfooterrecyclerview.R;
 import com.willblaschko.android.headerfooterrecyclerview.RecyclerViewHeaderFooterAdapter;
-import com.willblaschko.android.headerfooterrecyclerview.RecyclerViewIntermediary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class ExampleHorizontalStaggeredGridActivity extends Activity {
     private RecyclerView mRecyclerView;
     private RecyclerViewHeaderFooterAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private RecyclerViewIntermediary mIntermediary;
+    private IRecyclerViewIntermediary mIntermediary;
 
     private List<String> mStrings = new ArrayList<>();
 

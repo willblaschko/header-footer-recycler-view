@@ -110,7 +110,7 @@ public class RecyclerViewHeaderFooterAdapterTest extends InstrumentationTestCase
         return strings;
     }
 
-    private class TestIntermediary implements RecyclerViewIntermediary {
+    private class TestIntermediary implements IRecyclerViewIntermediary {
 
         private List<String> mItems;
 

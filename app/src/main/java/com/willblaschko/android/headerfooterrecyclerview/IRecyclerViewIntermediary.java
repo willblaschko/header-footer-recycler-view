@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 /**
  * Created by Will on 2/8/2015.
  */
-public interface RecyclerViewIntermediary {
+public interface IRecyclerViewIntermediary {
     public int getItemCount();
     public Object getItem(int position);
     public RecyclerView.ViewHolder getViewHolder(ViewGroup viewGroup, int type);

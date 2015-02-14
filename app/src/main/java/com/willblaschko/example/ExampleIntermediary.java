@@ -6,15 +6,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.willblaschko.android.headerfooterrecyclerview.IRecyclerViewIntermediary;
 import com.willblaschko.android.headerfooterrecyclerview.R;
-import com.willblaschko.android.headerfooterrecyclerview.RecyclerViewIntermediary;
 
 import java.util.List;
 
 /**
  * Created by Will on 2/8/2015.
  */
-public class ExampleIntermediary implements RecyclerViewIntermediary {
+public class ExampleIntermediary implements IRecyclerViewIntermediary {
 
     private List<String> mItems;
 

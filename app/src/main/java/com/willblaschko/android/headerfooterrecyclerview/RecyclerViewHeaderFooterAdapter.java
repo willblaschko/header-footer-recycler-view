@@ -31,10 +31,10 @@ public class RecyclerViewHeaderFooterAdapter extends RecyclerView.Adapter {
     private int mManagerType;
     private int mSpan = 1;
     private RecyclerView.LayoutManager mManager;
-    private RecyclerViewIntermediary mIntermediary;
+    private IRecyclerViewIntermediary mIntermediary;
 
 
-    public RecyclerViewHeaderFooterAdapter(RecyclerView.LayoutManager manager, RecyclerViewIntermediary intermediary){
+    public RecyclerViewHeaderFooterAdapter(RecyclerView.LayoutManager manager, IRecyclerViewIntermediary intermediary){
         setManager(manager);
         this.mIntermediary = intermediary;
     }
