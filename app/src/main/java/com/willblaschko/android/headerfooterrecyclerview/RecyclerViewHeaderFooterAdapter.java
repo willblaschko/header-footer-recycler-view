@@ -29,7 +29,6 @@ public class RecyclerViewHeaderFooterAdapter extends RecyclerView.Adapter {
     private List<View> mFooters = new ArrayList<>();
 
     private int mManagerType;
-    private int mSpan = 1;
     private RecyclerView.LayoutManager mManager;
     private IRecyclerViewIntermediary mIntermediary;
 
@@ -39,17 +38,19 @@ public class RecyclerViewHeaderFooterAdapter extends RecyclerView.Adapter {
         this.mIntermediary = intermediary;
     }
 
+    public void setLayoutManager(RecyclerView.LayoutManager manager){
+        setManager(manager);
+    }
+
     private void setManager(RecyclerView.LayoutManager manager){
         mManager = manager;
         if(mManager instanceof GridLayoutManager){
             mManagerType = TYPE_MANAGER_GRID;
-            mSpan = ((GridLayoutManager) mManager).getSpanCount();
             ((GridLayoutManager) mManager).setSpanSizeLookup(mSpanSizeLookup);
         }else if(mManager instanceof LinearLayoutManager){
             mManagerType = TYPE_MANAGER_LINEAR;
         }else if(mManager instanceof StaggeredGridLayoutManager){
             mManagerType = TYPE_MANAGER_STAGGERED_GRID;
-            mSpan = ((StaggeredGridLayoutManager) mManager).getSpanCount();
             ((StaggeredGridLayoutManager) mManager).setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
         }else{
             mManagerType = TYPE_MANAGER_OTHER;
@@ -62,11 +63,20 @@ public class RecyclerViewHeaderFooterAdapter extends RecyclerView.Adapter {
 
     public int getGridSpan(int position){
         if(isHeader(position) || isFooter(position)){
-            return mSpan;
+            return getSpan();
         }
         position -= mHeaders.size();
         if(mIntermediary.getItem(position) instanceof IGridItem){
             return ((IGridItem) mIntermediary.getItem(position)).getGridSpan();
+        }
+        return 1;
+    }
+
+    private int getSpan(){
+        if(mManager instanceof GridLayoutManager){
+            return ((GridLayoutManager) mManager).getSpanCount();
+        }else if(mManager instanceof StaggeredGridLayoutManager){
+            return ((StaggeredGridLayoutManager) mManager).getSpanCount();
         }
         return 1;
     }
